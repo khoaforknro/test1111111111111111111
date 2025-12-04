@@ -12,8 +12,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0c1a;
-      color: #ffffff;
+      background: linear-gradient(135deg, #fdf2ff, #e5f0ff);
+      color: #1f2933;
     }
 
     a {
@@ -48,8 +48,9 @@
       border-radius: 999px;
       overflow: hidden;
       border: 3px solid #ffffff;
-      background-color: #222;
+      background-color: #f1e4ff;
       flex-shrink: 0;
+      box-shadow: 0 12px 30px rgba(148, 119, 255, 0.45);
     }
 
     .avatar-wrapper img {
@@ -76,7 +77,7 @@
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #d0d0d0;
+      color: #6b7280;
     }
 
     /* NAVIGATION MENU */
@@ -93,19 +94,20 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #d5d5d5;
+      color: #4b5563;
       cursor: pointer;
       position: relative;
+      padding-bottom: 4px;
     }
 
     .nav-item::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -4px;
+      bottom: 0;
       width: 0;
       height: 2px;
-      background-color: #ffffff;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6);
       transition: width 0.3s ease;
     }
 
@@ -116,12 +118,14 @@
     /* CONTENT SECTION */
 
     .content-section {
-      background-color: #05071b;
-      border-radius: 18px;
+      background-color: #ffffff;
+      border-radius: 24px;
       padding: 30px 28px;
       display: flex;
       flex-direction: column;
       gap: 26px;
+      box-shadow: 0 24px 60px rgba(148, 119, 255, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .content-header {
@@ -131,8 +135,8 @@
     }
 
     .content-title {
-      font-size: 48px;
-      letter-spacing: 5px;
+      font-size: 44px;
+      letter-spacing: 6px;
       text-transform: uppercase;
       font-weight: 800;
     }
@@ -141,7 +145,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #bbbbbb;
+      color: #6b7280;
     }
 
     .content-body {
@@ -153,10 +157,11 @@
 
     .content-image-wrapper {
       position: relative;
-      border-radius: 14px;
+      border-radius: 18px;
       overflow: hidden;
-      background: linear-gradient(135deg, #b9002e, #ff005c);
+      background: radial-gradient(circle at top left, #f472b6, #a855f7, #6366f1);
       min-height: 260px;
+      box-shadow: 0 18px 38px rgba(236, 72, 153, 0.55);
     }
 
     .content-image-wrapper img {
@@ -164,7 +169,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      opacity: 0.93;
+      mix-blend-mode: lighten;
+      opacity: 0.96;
     }
 
     .content-image-label {
@@ -174,10 +180,11 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #f5f5f5;
-      background-color: rgba(0, 0, 0, 0.45);
-      padding: 4px 10px;
+      color: #fdf2ff;
+      background-color: rgba(15, 23, 42, 0.65);
+      padding: 4px 11px;
       border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.6);
     }
 
     .content-list {
@@ -194,20 +201,27 @@
       font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #dfdfdf;
+      color: #374151;
     }
 
     .content-item-number {
       font-size: 18px;
       font-weight: 700;
-      color: #f6f6f6;
+      color: #111827;
       min-width: 32px;
     }
 
     .content-item-text {
-      border-bottom: 1px solid #303247;
+      border-bottom: 1px solid #e5e7eb;
       padding-bottom: 6px;
       flex-grow: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .content-item-text:hover {
+      color: #8b5cf6;
+      border-color: #ec4899;
     }
 
     .content-tags {
@@ -221,16 +235,18 @@
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #cfcfcf;
+      color: #4b5563;
       padding: 5px 12px;
       border-radius: 999px;
-      border: 1px solid #41445c;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: linear-gradient(135deg, #f9fafb, #eef2ff);
     }
 
     .tag.highlight {
-      background-color: #ffffff;
-      color: #05071b;
-      border-color: #ffffff;
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: #f9fafb;
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba(236, 72, 153, 0.6);
     }
 
     /* RESPONSIVE */
@@ -261,7 +277,8 @@
       }
 
       .content-title {
-        font-size: 34px;
+        font-size: 30px;
+        letter-spacing: 4px;
       }
     }
   </style>
@@ -270,78 +287,4 @@
   <div class="page">
     <!-- HEADER -->
     <header class="header">
-      <div class="brand-area">
-        <div class="avatar-wrapper">
-          <!-- ĐỔI ẢNH AVATAR TẠI ĐÂY -->
-          <img src="https://iili.io/fIneulp.md.png" alt="" />
-        </div>
-        <div class="brand-text">
-          <div class="brand-title">Ke Sugar</div>
-          <div class="brand-subtitle">Photography &amp; Videography Portfolio</div>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <div class="nav-item">MAIN</div>
-        <div class="nav-item">ABOUT ME</div>
-        <div class="nav-item">PHOTOS</div>
-        <div class="nav-item">PHOTOS COSPLAY</div>
-        <div class="nav-item">PHOTOS NORMAL</div>
-        <div class="nav-item">VIDEOS</div>
-        <div class="nav-item">SERVICE &amp; CONTACT</div>
-        <div class="nav-item">RULES</div>
-      </nav>
-    </header>
-
-    <!-- CONTENT SECTION -->
-    <section class="content-section">
-      <div class="content-header">
-        <div class="content-title">CONTENT</div>
-        <div class="content-subtitle">Ke Sugar · Portfolio</div>
-      </div>
-
-      <div class="content-body">
-        <!-- ẢNH CONTENT BÊN TRÁI -->
-        <div class="content-image-wrapper">
-          <!-- ĐỔI ẢNH CONTENT TẠI ĐÂY -->
-          <img src="https://iili.io/fIneulp.md.png" alt="" />
-          <div class="content-image-label">Cosplay / Portrait</div>
-        </div>
-
-        <!-- DANH SÁCH NỘI DUNG BÊN PHẢI -->
-        <div class="content-list">
-          <div class="content-item">
-            <div class="content-item-number">02</div>
-            <div class="content-item-text">ABOUT ME</div>
-          </div>
-          <div class="content-item">
-            <div class="content-item-number">03</div>
-            <div class="content-item-text">PHOTOS</div>
-          </div>
-          <div class="content-item">
-            <div class="content-item-number">06</div>
-            <div class="content-item-text">VIDEOS</div>
-          </div>
-          <div class="content-item">
-            <div class="content-item-number">07</div>
-            <div class="content-item-text">SERVICE</div>
-          </div>
-          <div class="content-item">
-            <div class="content-item-number">08</div>
-            <div class="content-item-text">RULES</div>
-          </div>
-
-          <!-- TAG DƯỚI CÙNG -->
-          <div class="content-tags">
-            <div class="tag highlight">Ke Sugar</div>
-            <div class="tag">Đường Quốc Khoa</div>
-            <div class="tag">Photography</div>
-            <div class="tag">Videography</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</body>
-</html>
-
+      <div
