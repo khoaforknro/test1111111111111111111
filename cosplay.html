@@ -114,30 +114,26 @@
       margin-bottom: 24px;
     }
 
-    /* GALLERY */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-      gap: 0; /* không khoảng cách */
+    /* ✅ MASONRY GALLERY */
+    .masonry {
+      column-count: 3;
+      column-gap: 0;
     }
 
-    .gallery-item {
-      width: 100%;
-      height: 70vh; /* 2/3 ảnh gốc */
-      background-color: #000; /* nền đen để ảnh không bị trắng */
-      overflow: hidden;
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 0;
     }
 
-    .gallery-item img {
+    .masonry-item img {
       width: 100%;
-      height: 100%;
-      object-fit: contain; /* giữ nguyên tỉ lệ, không crop */
+      height: auto;
       display: block;
     }
 
     @media (max-width: 900px) {
-      .gallery-item {
-        height: 60vh;
+      .masonry {
+        column-count: 1;
       }
     }
   </style>
@@ -145,7 +141,7 @@
 
 <body>
 
-  <!-- CHẶN CHUỘT PHẢI -->
+  <!-- ✅ CHẶN CHUỘT PHẢI -->
   <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
   </script>
@@ -180,29 +176,29 @@
     <section class="cosplay-section">
       <div class="cosplay-title">PHOTOS COSPLAY</div>
 
-      <div class="gallery-grid">
+      <div class="masonry">
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg">
         </div>
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="https://i.ibb.co/jZqxjbxb/25-HH1144-2.jpg">
         </div>
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="https://i.ibb.co/qLy9PBbv/25-HH1133-1.jpg">
         </div>
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
         </div>
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="https://i.ibb.co/fdwWt76X/25HH1115.jpg">
         </div>
 
-        <div class="gallery-item">
+        <div class="masonry-item">
           <img src="URL_ANH_6">
         </div>
 
