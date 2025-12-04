@@ -4,17 +4,15 @@
   <meta charset="UTF-8" />
   <title>Ke Sugar - Portfolio</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #e0f2fe; /* xanh pastel */
       color: #1f2933;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .page {
       max-width: 1200px;
@@ -43,13 +41,14 @@
       overflow: hidden;
       border: 3px solid #fff;
       background-color: #e0f2fe;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25); /* shadow xanh */
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
     }
 
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .brand-title {
@@ -91,20 +90,18 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #3b82f6, #0ea5e9); /* xanh gradient */
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9);
       transition: width 0.3s ease;
     }
 
-    .nav-item:hover::after {
-      width: 100%;
-    }
+    .nav-item:hover::after { width: 100%; }
 
     /* CONTENT BOX */
     .content-section {
       background-color: #fff;
       border-radius: 24px;
       padding: 30px 28px;
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18); /* shadow xanh pastel */
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
       border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
@@ -122,21 +119,20 @@
       gap: 32px;
     }
 
-    /* IMAGE BOX */
     .content-image-wrapper {
       border-radius: 18px;
       overflow: hidden;
       background-color: #e0f2fe;
-      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25); /* shadow xanh */
+      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
     }
 
     .content-image-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    /* LIST */
     .content-list {
       display: flex;
       flex-direction: column;
@@ -166,7 +162,6 @@
       flex-grow: 1;
     }
 
-    /* TAGS */
     .content-tags {
       display: flex;
       flex-wrap: wrap;
@@ -186,20 +181,14 @@
     }
 
     .tag.highlight {
-      background: linear-gradient(135deg, #3b82f6, #0ea5e9); /* xanh gradient */
+      background: linear-gradient(135deg, #3b82f6, #0ea5e9);
       color: #fff;
       border-color: transparent;
     }
 
     @media (max-width: 900px) {
-      .header {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .content-body {
-        grid-template-columns: 1fr;
-      }
+      .header { flex-direction: column; gap: 20px; }
+      .content-body { grid-template-columns: 1fr; }
     }
   </style>
 </head>
