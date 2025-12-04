@@ -11,9 +11,9 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #fdf2ff, #e5f0ff);
-      color: #1f2933;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f3f4f7;
+      color: #111111;
     }
 
     a {
@@ -48,8 +48,9 @@
       border-radius: 999px;
       overflow: hidden;
       border: 3px solid #ffffff;
-      background-color: #f1e4ff;
-      box-shadow: 0 8px 20px rgba(148, 119, 255, 0.3);
+      background-color: #e0e0e0;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     .avatar-wrapper img {
@@ -76,10 +77,10 @@
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #6b7280;
+      color: #666666;
     }
 
-    /* NAV */
+    /* NAVIGATION MENU */
 
     .nav {
       display: flex;
@@ -93,7 +94,8 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #4b5563;
+      color: #444444;
+      cursor: pointer;
       position: relative;
       padding-bottom: 4px;
     }
@@ -105,7 +107,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      background-color: #111111;
       transition: width 0.3s ease;
     }
 
@@ -113,17 +115,16 @@
       width: 100%;
     }
 
-    /* CONTENT CARD */
+    /* CONTENT SECTION */
 
     .content-section {
       background-color: #ffffff;
-      border-radius: 24px;
+      border-radius: 20px;
       padding: 30px 28px;
       display: flex;
       flex-direction: column;
       gap: 26px;
-      box-shadow: 0 24px 60px rgba(148, 119, 255, 0.25);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
     }
 
     .content-header {
@@ -133,8 +134,8 @@
     }
 
     .content-title {
-      font-size: 44px;
-      letter-spacing: 6px;
+      font-size: 46px;
+      letter-spacing: 5px;
       text-transform: uppercase;
       font-weight: 800;
     }
@@ -143,7 +144,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #6b7280;
+      color: #777777;
     }
 
     .content-body {
@@ -153,51 +154,35 @@
       align-items: stretch;
     }
 
-    /* IMAGE BLOCK – GIỮ MÀU, KHÔNG LẸM ẢNH */
-
     .content-image-wrapper {
       position: relative;
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
-      padding: 10px;
-      background: radial-gradient(circle at top left, #f472b6, #a855f7, #6366f1);
-      box-shadow: 0 18px 38px rgba(236, 72, 153, 0.55);
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
+      background: linear-gradient(135deg, #ff7a9c, #ffc0d4);
+      min-height: 260px;
+      box-shadow: 0 16px 32px rgba(248, 113, 150, 0.45);
     }
 
-    .content-image-inner {
-      border-radius: 14px;
-      overflow: hidden;
-      background-color: #000; /* nền đen cho ảnh nổi hơn */
-      width: 100%;
-      height: 100%;
-    }
-
-    .content-image-inner img {
+    .content-image-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      /* KHÔNG dùng mix-blend, KHÔNG giảm opacity */
+      opacity: 0.96;
     }
 
     .content-image-label {
       position: absolute;
-      left: 20px;
-      bottom: 18px;
+      left: 16px;
+      bottom: 14px;
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #fdf2ff;
-      background-color: rgba(15, 23, 42, 0.75);
-      padding: 4px 12px;
+      color: #ffffff;
+      background-color: rgba(15, 23, 42, 0.65);
+      padding: 4px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.6);
     }
-
-    /* LIST */
 
     .content-list {
       display: flex;
@@ -213,26 +198,26 @@
       font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #374151;
+      color: #333333;
     }
 
     .content-item-number {
       font-size: 18px;
       font-weight: 700;
-      color: #111827;
+      color: #111111;
       min-width: 32px;
     }
 
     .content-item-text {
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e3e3e3;
       padding-bottom: 6px;
       flex-grow: 1;
-      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
     .content-item-text:hover {
-      color: #8b5cf6;
-      border-color: #ec4899;
+      color: #000000;
+      border-color: #111111;
     }
 
     .content-tags {
@@ -246,18 +231,17 @@
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #4b5563;
+      color: #444444;
       padding: 5px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background-color: #f9fafb;
+      border: 1px solid #d0d0d0;
+      background-color: #ffffff;
     }
 
     .tag.highlight {
-      background: linear-gradient(135deg, #ec4899, #8b5cf6);
-      color: #f9fafb;
-      border-color: transparent;
-      box-shadow: 0 10px 24px rgba(236, 72, 153, 0.6);
+      background-color: #111111;
+      color: #ffffff;
+      border-color: #111111;
     }
 
     /* RESPONSIVE */
@@ -288,8 +272,7 @@
       }
 
       .content-title {
-        font-size: 30px;
-        letter-spacing: 4px;
+        font-size: 32px;
       }
     }
   </style>
@@ -300,12 +283,12 @@
     <header class="header">
       <div class="brand-area">
         <div class="avatar-wrapper">
-          <!-- ẢNH AVATAR -->
+          <!-- ĐỔI ẢNH AVATAR TẠI ĐÂY -->
           <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar avatar" />
         </div>
         <div class="brand-text">
           <div class="brand-title">Ke Sugar</div>
-          <div class="brand-subtitle">Photography & Videography Portfolio</div>
+          <div class="brand-subtitle">Photography &amp; Videography Portfolio</div>
         </div>
       </div>
 
@@ -316,12 +299,12 @@
         <a class="nav-item" href="cosplay.html">PHOTOS COSPLAY</a>
         <a class="nav-item" href="normal.html">PHOTOS NORMAL</a>
         <a class="nav-item" href="videos.html">VIDEOS</a>
-        <a class="nav-item" href="service.html">SERVICE & CONTACT</a>
+        <a class="nav-item" href="service.html">SERVICE &amp; CONTACT</a>
         <a class="nav-item" href="rules.html">RULES</a>
       </nav>
     </header>
 
-    <!-- CONTENT -->
+    <!-- CONTENT SECTION -->
     <section class="content-section">
       <div class="content-header">
         <div class="content-title">CONTENT</div>
@@ -329,16 +312,14 @@
       </div>
 
       <div class="content-body">
-        <!-- IMAGE BLOCK -->
+        <!-- ẢNH CONTENT BÊN TRÁI -->
         <div class="content-image-wrapper">
-          <div class="content-image-inner">
-            <!-- ẢNH CHÍNH, GIỮ NGUYÊN, KHÔNG LẸM MÀU -->
-            <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar content" />
-          </div>
+          <!-- ĐỔI ẢNH CONTENT TẠI ĐÂY -->
+          <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar content" />
           <div class="content-image-label">Cosplay / Portrait</div>
         </div>
 
-        <!-- LIST + TAG -->
+        <!-- DANH SÁCH NỘI DUNG BÊN PHẢI -->
         <div class="content-list">
           <div class="content-item">
             <div class="content-item-number">02</div>
@@ -353,7 +334,7 @@
             <a class="content-item-text" href="videos.html">VIDEOS</a>
           </div>
           <div class="content-item">
-            <div class="content-item-number">07</div">
+            <div class="content-item-number">07</div>
             <a class="content-item-text" href="service.html">SERVICE</a>
           </div>
           <div class="content-item">
@@ -361,6 +342,7 @@
             <a class="content-item-text" href="rules.html">RULES</a>
           </div>
 
+          <!-- TAG DƯỚI CÙNG -->
           <div class="content-tags">
             <div class="tag highlight">Ke Sugar</div>
             <div class="tag">Đường Quốc Khoa</div>
@@ -370,7 +352,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </body>
 </html>
