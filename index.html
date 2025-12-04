@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #e0f2fe;
+      background-color: #e0f2fe; /* xanh pastel */
       color: #1f2933;
     }
 
@@ -22,6 +22,7 @@
       padding: 40px 30px;
     }
 
+    /* HEADER */
     .header {
       display: flex;
       justify-content: space-between;
@@ -41,8 +42,8 @@
       border-radius: 999px;
       overflow: hidden;
       border: 3px solid #fff;
-      background-color: #fce7f3;
-      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+      background-color: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25); /* shadow xanh */
     }
 
     .avatar-wrapper img {
@@ -65,6 +66,7 @@
       color: #6b7280;
     }
 
+    /* NAV */
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -89,7 +91,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9); /* xanh gradient */
       transition: width 0.3s ease;
     }
 
@@ -97,11 +99,12 @@
       width: 100%;
     }
 
+    /* CONTENT BOX */
     .content-section {
       background-color: #fff;
       border-radius: 24px;
       padding: 30px 28px;
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18); /* shadow xanh pastel */
       border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
@@ -119,11 +122,12 @@
       gap: 32px;
     }
 
+    /* IMAGE BOX */
     .content-image-wrapper {
       border-radius: 18px;
       overflow: hidden;
-      background-color: #fce7f3;
-      box-shadow: 0 12px 28px rgba(236, 72, 153, 0.3);
+      background-color: #e0f2fe;
+      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25); /* shadow xanh */
     }
 
     .content-image-wrapper img {
@@ -132,6 +136,7 @@
       object-fit: cover;
     }
 
+    /* LIST */
     .content-list {
       display: flex;
       flex-direction: column;
@@ -161,6 +166,7 @@
       flex-grow: 1;
     }
 
+    /* TAGS */
     .content-tags {
       display: flex;
       flex-wrap: wrap;
@@ -180,7 +186,7 @@
     }
 
     .tag.highlight {
-      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      background: linear-gradient(135deg, #3b82f6, #0ea5e9); /* xanh gradient */
       color: #fff;
       border-color: transparent;
     }
@@ -199,6 +205,8 @@
 </head>
 <body>
   <div class="page">
+
+    <!-- HEADER -->
     <header class="header">
       <div class="brand-area">
         <div class="avatar-wrapper">
@@ -209,6 +217,7 @@
           <div class="brand-subtitle">Photography & Videography Portfolio</div>
         </div>
       </div>
+
       <nav class="nav">
         <a class="nav-item" href="index.html">MAIN</a>
         <a class="nav-item" href="about.html">ABOUT ME</a>
@@ -221,33 +230,41 @@
       </nav>
     </header>
 
+    <!-- CONTENT -->
     <section class="content-section">
       <div class="content-title">CONTENT</div>
+
       <div class="content-body">
         <div class="content-image-wrapper">
           <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar content" />
         </div>
+
         <div class="content-list">
           <div class="content-item">
             <div class="content-item-number">02</div>
             <a class="content-item-text" href="about.html">ABOUT ME</a>
           </div>
+
           <div class="content-item">
             <div class="content-item-number">03</div>
             <a class="content-item-text" href="photos.html">PHOTOS</a>
           </div>
+
           <div class="content-item">
             <div class="content-item-number">06</div>
             <a class="content-item-text" href="videos.html">VIDEOS</a>
           </div>
+
           <div class="content-item">
             <div class="content-item-number">07</div>
             <a class="content-item-text" href="service.html">SERVICE</a>
           </div>
+
           <div class="content-item">
             <div class="content-item-number">08</div>
             <a class="content-item-text" href="rules.html">RULES</a>
           </div>
+
           <div class="content-tags">
             <div class="tag highlight">Ke Sugar</div>
             <div class="tag">Đường Quốc Khoa</div>
@@ -256,12 +273,8 @@
           </div>
         </div>
       </div>
+
     </section>
   </div>
 </body>
 </html>
-
-
-
-
-
