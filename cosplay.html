@@ -120,26 +120,30 @@
     }
 
     .cosplay-item {
+      width: 100%;
+      height: 380px; /* chỉnh chiều cao ảnh */
       border-radius: 18px;
       overflow: hidden;
-      background-color: #e0f2fe;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
-    }
-
-    .cosplay-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
     }
 
     @media (max-width: 900px) {
       .header { flex-direction: column; gap: 20px; }
       .cosplay-grid { grid-template-columns: 1fr; }
+      .cosplay-item { height: 420px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- CHẶN CHUỘT PHẢI -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  </script>
+
   <div class="page">
 
     <!-- HEADER -->
@@ -171,24 +175,19 @@
       <div class="cosplay-title">PHOTOS COSPLAY</div>
 
       <div class="cosplay-grid">
-        <div class="cosplay-item">
-          <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg" />
-        </div>
-        <div class="cosplay-item">
-          <img src="https://i.ibb.co/jZqxjbxb/25-HH1144-2.jpg" />
-        </div>
-        <div class="cosplay-item">
-          <img src="https://i.ibb.co/qLy9PBbv/25-HH1133-1.jpg" />
-        </div>
-        <div class="cosplay-item">
-          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg" />
-        </div>
-        <div class="cosplay-item">
-          <img src="https://i.ibb.co/fdwWt76X/25HH1115.jpg" />
-        </div>
-        <div class="cosplay-item">
-          <img src="URL_ANH_6" alt="Cosplay 6" />
-        </div>
+
+        <div class="cosplay-item" style="background-image: url('https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg');"></div>
+
+        <div class="cosplay-item" style="background-image: url('https://i.ibb.co/jZqxjbxb/25-HH1144-2.jpg');"></div>
+
+        <div class="cosplay-item" style="background-image: url('https://i.ibb.co/qLy9PBbv/25-HH1133-1.jpg');"></div>
+
+        <div class="cosplay-item" style="background-image: url('https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg');"></div>
+
+        <div class="cosplay-item" style="background-image: url('https://i.ibb.co/fdwWt76X/25HH1115.jpg');"></div>
+
+        <div class="cosplay-item" style="background-image: url('URL_ANH_6');"></div>
+
       </div>
     </section>
 
