@@ -47,8 +47,8 @@
       border-radius: 999px;
       overflow: hidden;
       border: 3px solid #fff;
-      background-color: #fce7f3;
-      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+      background-color: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25); /* xanh pastel */
     }
 
     .avatar-wrapper img {
@@ -96,7 +96,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9); /* xanh gradient */
       transition: width 0.3s ease;
     }
 
@@ -109,15 +109,16 @@
       border-radius: 24px;
       overflow: hidden;
       background-color: #ffffff;
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
-      border: 1px solid rgba(236, 72, 153, 0.2);
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18); /* xanh pastel */
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      width: 100%; /* đảm bảo rộng bằng index */
     }
 
     .gallery-background {
-      background-image: url("URL_ANH_GALLERY"); /* đổi link ảnh ở đây */
+      background-image: url("URL_ANH_GALLERY"); 
       background-size: cover;
       background-position: center;
-      height: 420px;
+      height: 500px; /* tăng chiều cao cho cân với index */
       width: 100%;
       position: relative;
     }
