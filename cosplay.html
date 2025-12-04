@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photos Cosplay - Ke Sugar</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f2fe;
+      color: #1f2933;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 30px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .avatar-wrapper {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 3px solid #fff;
+      background-color: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
+      max-width: 500px;
+    }
+
+    .nav-item {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4b5563;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+      transition: width 0.3s ease;
+    }
+
+    .nav-item:hover::after { width: 100%; }
+
+    /* COSPLAY SECTION */
+    .cosplay-section {
+      background-color: #fff;
+      border-radius: 24px;
+      padding: 30px 28px;
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .cosplay-title {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .cosplay-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cosplay-item {
+      border-radius: 18px;
+      overflow: hidden;
+      background-color: #e0f2fe;
+      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
+    }
+
+    .cosplay-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .header { flex-direction: column; gap: 20px; }
+      .cosplay-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand-area">
+        <div class="avatar-wrapper">
+          <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar avatar" />
+        </div>
+        <div>
+          <div class="brand-title">Ke Sugar</div>
+          <div class="brand-subtitle">Photography & Videography Portfolio</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="index.html">MAIN</a>
+        <a class="nav-item" href="about.html">ABOUT ME</a>
+        <a class="nav-item" href="photos.html">PHOTOS</a>
+        <a class="nav-item" href="cosplay.html">PHOTOS COSPLAY</a>
+        <a class="nav-item" href="normal.html">PHOTOS NORMAL</a>
+        <a class="nav-item" href="videos.html">VIDEOS</a>
+        <a class="nav-item" href="service.html">SERVICE & CONTACT</a>
+        <a class="nav-item" href="rules.html">RULES</a>
+      </nav>
+    </header>
+
+    <!-- COSPLAY SECTION -->
+    <section class="cosplay-section">
+      <div class="cosplay-title">PHOTOS COSPLAY</div>
+
+      <div class="cosplay-grid">
+        <div class="cosplay-item">
+          <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg" />
+        </div>
+        <div class="cosplay-item">
+          <img src="https://i.ibb.co/jZqxjbxb/25-HH1144-2.jpg" />
+        </div>
+        <div class="cosplay-item">
+          <img src="https://i.ibb.co/qLy9PBbv/25-HH1133-1.jpg" />
+        </div>
+        <div class="cosplay-item">
+          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg" />
+        </div>
+        <div class="cosplay-item">
+          <img src="https://i.ibb.co/fdwWt76X/25HH1115.jpg" />
+        </div>
+        <div class="cosplay-item">
+          <img src="URL_ANH_6" alt="Cosplay 6" />
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
