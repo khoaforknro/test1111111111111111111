@@ -4,22 +4,15 @@
   <meta charset="UTF-8" />
   <title>Photos - Ke Sugar</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #e0f2fe; 
+      background-color: #e0f2fe;
       color: #1f2933;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .page {
       max-width: 1200px;
@@ -48,7 +41,7 @@
       overflow: hidden;
       border: 3px solid #fff;
       background-color: #e0f2fe;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25); /* xanh pastel */
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
     }
 
     .avatar-wrapper img {
@@ -96,29 +89,27 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #3b82f6, #0ea5e9); /* xanh gradient */
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9);
       transition: width 0.3s ease;
     }
 
-    .nav-item:hover::after {
-      width: 100%;
-    }
+    .nav-item:hover::after { width: 100%; }
 
     /* GALLERY SECTION */
     .gallery-section {
       border-radius: 24px;
       overflow: hidden;
       background-color: #ffffff;
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18); /* xanh pastel */
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
       border: 1px solid rgba(56, 189, 248, 0.2);
-      width: 100%; /* đảm bảo rộng bằng index */
+      width: 100%;
     }
 
     .gallery-background {
-      background-image: url("URL_ANH_GALLERY"); 
+      background-image: url("URL_ANH_GALLERY");
       background-size: cover;
       background-position: center;
-      height: 500px; /* tăng chiều cao cho cân với index */
+      height: 500px;
       width: 100%;
       position: relative;
     }
@@ -170,19 +161,9 @@
     }
 
     @media (max-width: 900px) {
-      .header {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .gallery-title {
-        font-size: 36px;
-      }
-
-      .gallery-buttons {
-        flex-direction: column;
-        gap: 12px;
-      }
+      .header { flex-direction: column; gap: 20px; }
+      .gallery-title { font-size: 36px; }
+      .gallery-buttons { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
