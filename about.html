@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>About Me - Ke Sugar</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -10,6 +11,17 @@
       font-family: Arial, sans-serif;
       background-color: #e0f2fe;
       color: #1f2933;
+
+      /* Chặn copy + long-press */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    img {
+      pointer-events: none;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -57,18 +69,24 @@
       gap: 6px;
     }
 
-    .brand-title {
+    /* ✅ GLOW TITLE */
+    .glow-title {
       font-size: 32px;
       letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: 700;
+      text-shadow: 0 0 8px rgba(14,165,233,0.7),
+                   0 0 16px rgba(14,165,233,0.5),
+                   0 0 24px rgba(14,165,233,0.3);
     }
 
-    .brand-subtitle {
+    /* ✅ GLOW SUBTITLE */
+    .glow-sub {
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #6b7280;
+      text-shadow: 0 0 6px rgba(59,130,246,0.6);
     }
 
     /* NAV */
@@ -128,11 +146,23 @@
       gap: 12px;
     }
 
-    .about-title {
+    /* ✅ FLOW EFFECT */
+    .flow-text {
       font-size: 36px;
       font-weight: 800;
       letter-spacing: 4px;
       text-transform: uppercase;
+
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9, #3b82f6);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flow 4s linear infinite;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
     }
 
     .about-text {
@@ -152,11 +182,13 @@
       .header { flex-direction: column; gap: 20px; align-items: flex-start; }
       .nav { justify-content: flex-start; }
       .about-background { height: 300px; }
-      .about-title { font-size: 28px; }
+      .flow-text { font-size: 28px; }
     }
   </style>
 </head>
+
 <body>
+
   <div class="page">
 
     <!-- HEADER -->
@@ -165,9 +197,10 @@
         <div class="avatar-wrapper">
           <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar avatar" />
         </div>
+
         <div class="brand-text">
-          <div class="brand-title">Ke Sugar</div>
-          <div class="brand-subtitle">Photography & Videography Portfolio</div>
+          <div class="glow-title">Ke Sugar</div>
+          <div class="glow-sub">Photography & Videography Portfolio</div>
         </div>
       </div>
 
@@ -188,7 +221,7 @@
       <div class="about-background"></div>
 
       <div class="about-content">
-        <div class="about-title">ABOUT ME</div>
+        <div class="flow-text">ABOUT ME</div>
 
         <div class="about-text">
           Xin chào, Mình là Khoa — mọi người có thể gọi mình là Khoa hoặc Ke.
@@ -202,10 +235,34 @@
           My job is to chase them, capture them, and turn them into something that resonates.
         </div>
 
-        <div class="about-note">Work With Me </div>
+        <div class="about-note">Work With Me</div>
       </div>
     </section>
 
   </div>
+
+  <!-- ✅ BẢO VỆ TRANG -->
+  <script>
+    // Chặn chuột phải
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Chặn F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
+      if (e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
+    });
+
+    // Chặn long-press mobile
+    let pressTimer;
+    document.addEventListener('touchstart', function (e) {
+      pressTimer = setTimeout(() => e.preventDefault(), 300);
+    }, { passive: false });
+
+    document.addEventListener('touchend', function () {
+      clearTimeout(pressTimer);
+    });
+  </script>
+
 </body>
 </html>
