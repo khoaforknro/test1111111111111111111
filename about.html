@@ -69,39 +69,20 @@
       gap: 6px;
     }
 
-    /* ✅ ARGB TEXT (Ke Sugar) */
-    .argb-title {
+    /* ✅ Trở lại màu đen bình thường */
+    .brand-title {
       font-size: 32px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-
-      background: linear-gradient(
-        90deg,
-        rgba(0,255,255,1),
-        rgba(0,150,255,0.9),
-        rgba(0,80,255,0.8),
-        rgba(0,150,255,0.9),
-        rgba(0,255,255,1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #1f2933;
     }
 
-    /* ✅ ARGB TEXT nhẹ (subtitle) */
-    .argb-sub {
+    .brand-subtitle {
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
-
-      background: linear-gradient(
-        90deg,
-        rgba(0,255,255,0.9),
-        rgba(0,150,255,0.8),
-        rgba(0,255,255,0.9)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #4b5563;
     }
 
     /* NAV */
@@ -158,10 +139,10 @@
       padding: 30px 28px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 30px;
     }
 
-    /* ✅ ARGB FLOW TEXT (ABOUT ME) */
+    /* ✅ ONLY ABOUT ME HAS ARGB FLOW */
     .flow-text {
       font-size: 36px;
       font-weight: 800;
@@ -221,8 +202,8 @@
         </div>
 
         <div class="brand-text">
-          <div class="argb-title">Ke Sugar</div>
-          <div class="argb-sub">Photography & Videography Portfolio</div>
+          <div class="brand-title">Ke Sugar</div>
+          <div class="brand-subtitle">Photography & Videography Portfolio</div>
         </div>
       </div>
 
@@ -265,17 +246,13 @@
 
   <!-- ✅ BẢO VỆ TRANG -->
   <script>
-    // Chặn chuột phải
     document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // Chặn F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S
     document.addEventListener('keydown', function (e) {
       if (e.key === 'F12') e.preventDefault();
       if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
       if (e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
     });
 
-    // Chặn long-press mobile
     let pressTimer;
     document.addEventListener('touchstart', function (e) {
       pressTimer = setTimeout(() => e.preventDefault(), 300);
