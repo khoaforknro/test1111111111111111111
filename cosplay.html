@@ -11,6 +11,20 @@
       font-family: Arial, sans-serif;
       background-color: #e0f2fe;
       color: #1f2933;
+
+      /* Chặn copy + chặn long-press */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    img {
+      pointer-events: none; /* chặn giữ ảnh */
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -49,7 +63,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .brand-title {
@@ -114,38 +127,33 @@
       margin-bottom: 24px;
     }
 
-    /* ✅ MASONRY + AUTO BALANCE */
-    .masonry {
-      column-count: 3;
-      column-gap: 0;
+    /* ✅ GALLERY LAYOUT */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 0; /* dính sát */
     }
 
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 0;
-      padding: 4px; /* tạo cảm giác đều hơn */
+    /* 4 ảnh dọc */
+    .row-vertical {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
     }
 
-    .masonry-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-    }
-
-    /* ✅ Auto balance: ảnh dọc thu nhỏ nhẹ, ảnh ngang phóng nhẹ */
-    .masonry-item img[height > width] {
-      transform: scale(0.92);
-    }
-
-    .masonry-item img[width > height] {
-      transform: scale(1.05);
+    /* 2 ảnh ngang */
+    .row-horizontal {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
     }
 
     @media (max-width: 900px) {
-      .masonry {
-        column-count: 1;
+      .row-vertical {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .row-horizontal {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -153,9 +161,17 @@
 
 <body>
 
-  
+  <!-- ✅ CHẶN CHUỘT PHẢI + LONG PRESS -->
   <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
+
+    let pressTimer;
+    document.addEventListener('touchstart', function(e) {
+      pressTimer = setTimeout(() => e.preventDefault(), 300);
+    });
+    document.addEventListener('touchend', function(e) {
+      clearTimeout(pressTimer);
+    });
   </script>
 
   <div class="page">
@@ -188,30 +204,34 @@
     <section class="cosplay-section">
       <div class="cosplay-title">PHOTOS COSPLAY</div>
 
-      <div class="masonry">
+      <div class="gallery">
 
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
+        <!-- ✅ Dòng 1: 4 ảnh dọc -->
+        <div class="row-vertical">
+          <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg">
+          <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg">
+          <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
+          <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
         </div>
 
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
+        <!-- ✅ Dòng 2: 2 ảnh ngang -->
+        <div class="row-horizontal">
+          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
+          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
         </div>
 
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
+        <!-- ✅ Dòng 3: 4 ảnh dọc -->
+        <div class="row-vertical">
+          <img src="LINK7">
+          <img src="LINK8">
+          <img src="LINK9">
+          <img src="LINK10">
         </div>
 
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
-        </div>
-
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
-        </div>
-
-        <div class="masonry-item">
-          <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
+        <!-- ✅ Dòng 4: 2 ảnh ngang -->
+        <div class="row-horizontal">
+          <img src="LINK11">
+          <img src="LINK12">
         </div>
 
       </div>
