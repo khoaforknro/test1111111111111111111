@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ke Sugar - Portfolio</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #e0f2fe; /* xanh pastel */
+      background-color: #e0f2fe;
       color: #1f2933;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
+    img { pointer-events: none; }
     a { text-decoration: none; color: inherit; }
 
     .page {
@@ -41,14 +48,13 @@
       overflow: hidden;
       border: 3px solid #fff;
       background-color: #e0f2fe;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 8px 20px rgba(56,189,248,0.25);
     }
 
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .brand-title {
@@ -90,8 +96,8 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #3b82f6, #0ea5e9);
-      transition: width 0.3s ease;
+      background: linear-gradient(90deg,#3b82f6,#0ea5e9);
+      transition: width .3s ease;
     }
 
     .nav-item:hover::after { width: 100%; }
@@ -101,16 +107,27 @@
       background-color: #fff;
       border-radius: 24px;
       padding: 30px 28px;
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 24px 60px rgba(56,189,248,0.18);
+      border: 1px solid rgba(56,189,248,0.2);
     }
 
+    /* ✅ ARGB FLOW CHO CHỮ CONTENT */
     .content-title {
       font-size: 44px;
       font-weight: 800;
       letter-spacing: 6px;
       text-transform: uppercase;
+      background: linear-gradient(90deg, rgba(0,255,255,1), rgba(0,150,255,0.9), rgba(0,80,255,0.8), rgba(0,150,255,0.9), rgba(0,255,255,1));
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flow 4s linear infinite;
       margin-bottom: 20px;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
     }
 
     .content-body {
@@ -123,14 +140,13 @@
       border-radius: 18px;
       overflow: hidden;
       background-color: #e0f2fe;
-      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 12px 28px rgba(56,189,248,0.25);
     }
 
     .content-image-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .content-list {
@@ -139,6 +155,7 @@
       gap: 16px;
     }
 
+    /* ✅ MỤC 02–08: CHỮ ĐEN + GẠCH CHÂN GLOW ARGB + DÒNG KẺ MỜ */
     .content-item {
       display: flex;
       align-items: baseline;
@@ -146,22 +163,43 @@
       font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #374151;
+      color: #111827;
+      position: relative;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .content-item-text {
+      position: relative;
+      color: #111827;
+      font-weight: 600;
+      transition: color .3s ease;
+    }
+
+    .content-item-text::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(0,255,255,1), rgba(0,150,255,0.9), rgba(0,80,255,0.8), rgba(0,150,255,0.9), rgba(0,255,255,1));
+      background-size: 300%;
+      animation: flow 4s linear infinite;
+      transition: width .4s ease;
+    }
+
+    .content-item:hover .content-item-text::after {
+      width: 100%;
     }
 
     .content-item-number {
       font-size: 18px;
       font-weight: 700;
-      color: #111827;
       min-width: 32px;
     }
 
-    .content-item-text {
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 6px;
-      flex-grow: 1;
-    }
-
+    /* TAGS */
     .content-tags {
       display: flex;
       flex-wrap: wrap;
@@ -169,21 +207,38 @@
       margin-top: 8px;
     }
 
+    @keyframes glowFlow {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
+    }
+
     .tag {
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #4b5563;
       padding: 5px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background-color: #f9fafb;
+      border: none;
+      color: #fff;
+      background-size: 300%;
+      animation: glowFlow 4s linear infinite;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
 
-    .tag.highlight {
-      background: linear-gradient(135deg, #3b82f6, #0ea5e9);
-      color: #fff;
-      border-color: transparent;
+    .tag-ke {
+      background: linear-gradient(90deg,#0ea5e9,#3b82f6,#0ea5e9);
+    }
+
+    .tag-khoa {
+      background: linear-gradient(90deg,#ec4899,#f472b6,#ec4899);
+    }
+
+    .tag-photo {
+      background: linear-gradient(90deg,#f59e0b,#fbbf24,#f59e0b);
+    }
+
+    .tag-video {
+      background: linear-gradient(90deg,#10b981,#34d399,#10b981);
     }
 
     @media (max-width: 900px) {
@@ -192,6 +247,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
 
@@ -229,6 +285,7 @@
         </div>
 
         <div class="content-list">
+
           <div class="content-item">
             <div class="content-item-number">02</div>
             <a class="content-item-text" href="about.html">ABOUT ME</a>
@@ -237,6 +294,16 @@
           <div class="content-item">
             <div class="content-item-number">03</div>
             <a class="content-item-text" href="photos.html">PHOTOS</a>
+          </div>
+
+          <div class="content-item">
+            <div class="content-item-number">04</div>
+            <a class="content-item-text" href="cosplay.html">PHOTOS COSPLAY</a>
+          </div>
+
+          <div class="content-item">
+            <div class="content-item-number">05</div>
+            <a class="content-item-text" href="normal.html">NON-COSPLAY</a>
           </div>
 
           <div class="content-item">
@@ -255,16 +322,37 @@
           </div>
 
           <div class="content-tags">
-            <div class="tag highlight">Ke Sugar</div>
-            <div class="tag">Đường Quốc Khoa</div>
-            <div class="tag">Photography</div>
-            <div class="tag">Videography</div>
+            <div class="tag tag-ke">Ke Sugar</div>
+            <div class="tag tag-khoa">Đường Quốc Khoa</div>
+            <div class="tag tag-photo">Photography</div>
+            <div class="tag tag-video">Videography</div>
           </div>
+
         </div>
       </div>
 
     </section>
   </div>
+
+  <!-- ✅ SECURITY -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
+      if (e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
+    });
+
+    let pressTimer;
+    document.addEventListener('touchstart', function (e) {
+      pressTimer = setTimeout(() => e.preventDefault(), 300);
+    }, { passive: false });
+
+    document.addEventListener('touchend', function () {
+      clearTimeout(pressTimer);
+    });
+  </script>
+
 </body>
 </html>
-
