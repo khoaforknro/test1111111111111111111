@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Photos - Ke Sugar</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -10,6 +11,17 @@
       font-family: Arial, sans-serif;
       background-color: #e0f2fe;
       color: #1f2933;
+
+      /* Chặn copy + long-press */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    img {
+      pointer-events: none;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -129,12 +141,31 @@
       gap: 24px;
     }
 
+    /* ✅ ARGB FLOW TEXT */
     .gallery-title {
       font-size: 48px;
       font-weight: 800;
-      color: #fff;
       letter-spacing: 6px;
       text-transform: uppercase;
+      text-align: center;
+
+      background: linear-gradient(
+        90deg,
+        rgba(0,255,255,1),
+        rgba(0,150,255,0.9),
+        rgba(0,80,255,0.8),
+        rgba(0,150,255,0.9),
+        rgba(0,255,255,1)
+      );
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flow 4s linear infinite;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
     }
 
     .gallery-buttons {
@@ -142,6 +173,7 @@
       gap: 20px;
     }
 
+    /* ✅ GLOW BUTTONS */
     .gallery-button {
       font-size: 14px;
       text-transform: uppercase;
@@ -149,16 +181,17 @@
       padding: 12px 24px;
       border-radius: 999px;
       border: none;
-      background-color: #ffffff;
-      color: #111;
+      background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+      color: white;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(14,165,233,0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .gallery-button:hover {
-      background-color: #111;
-      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(14,165,233,0.6);
     }
 
     @media (max-width: 900px) {
@@ -168,7 +201,9 @@
     }
   </style>
 </head>
+
 <body>
+
   <div class="page">
 
     <!-- HEADER -->
@@ -199,7 +234,7 @@
     <section class="gallery-section">
       <div class="gallery-background">
         <div class="gallery-overlay">
-          <div class="gallery-title">SAMPLE</div>
+          <div class="gallery-title">MY SHOOTING PICTURES</div>
 
           <div class="gallery-buttons">
             <a href="cosplay.html">
@@ -216,5 +251,26 @@
     </section>
 
   </div>
+
+  <!-- ✅ SECURITY -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12') e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
+      if (e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
+    });
+
+    let pressTimer;
+    document.addEventListener('touchstart', function (e) {
+      pressTimer = setTimeout(() => e.preventDefault(), 300);
+    }, { passive: false });
+
+    document.addEventListener('touchend', function () {
+      clearTimeout(pressTimer);
+    });
+  </script>
+
 </body>
 </html>
