@@ -40,7 +40,103 @@
       padding: 40px 30px;
     }
 
-    /* ✅ 2 NÚT TAB CHIA ĐỀU */
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .avatar-wrapper {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 3px solid #fff;
+      background-color: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
+      max-width: 500px;
+    }
+
+    .nav-item {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4b5563;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg,#3b82f6,#0ea5e9);
+      transition: width .3s ease;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+
+    /* BOX NỘI DUNG */
+    .cosplay-section {
+      background-color: #fff;
+      border-radius: 24px;
+      padding: 30px 28px;
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* 2 NÚT TAB CHIA ĐỀU */
     .tab-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -85,7 +181,7 @@
       box-shadow: 0 0 20px rgba(56,189,248,1);
     }
 
-    /* ✅ GALLERY */
+    /* GALLERY */
     .gallery {
       display: flex;
       flex-direction: column;
@@ -116,7 +212,7 @@
 
 <body>
 
-  <!-- ✅ BẢO MẬT -->
+  <!-- BẢO MẬT -->
   <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', function (e) {
@@ -140,29 +236,57 @@
 
   <div class="page">
 
-    <!-- ✅ 2 NÚT TAB -->
-    <div class="tab-buttons">
-      <button class="tab-button active">PHOTOS COSPLAY</button>
-      <button class="tab-button" onclick="switchPage()">NON-COSPLAY PHOTOS</button>
-    </div>
-
-    <!-- ✅ GALLERY COSPLAY -->
-    <div class="gallery">
-      <div class="row-vertical">
-        <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg">
-        <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
-        <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand-area">
+        <div class="avatar-wrapper">
+          <img src="https://iili.io/fIneulp.md.png" alt="Ke Sugar avatar" />
+        </div>
+        <div>
+          <div class="brand-title">Ke Sugar</div>
+          <div class="brand-subtitle">Photography & Videography Portfolio</div>
+        </div>
       </div>
 
-      <div class="row-horizontal">
-        <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
-        <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
-      </div>
-    </div>
+      <nav class="nav">
+        <a class="nav-item" href="index.html">MAIN</a>
+        <a class="nav-item" href="about.html">ABOUT ME</a>
+        <a class="nav-item" href="photos.html">PHOTOS</a>
+        <a class="nav-item" href="cosplay.html">PHOTOS COSPLAY</a>
+        <a class="nav-item" href="normal.html">NON-COSPLAY</a>
+        <a class="nav-item" href="videos.html">VIDEOS</a>
+        <a class="nav-item" href="service.html">SERVICE & CONTACT</a>
+        <a class="nav-item" href="rules.html">RULES</a>
+      </nav>
+    </header>
 
+    <!-- BOX COSPLAY -->
+    <section class="cosplay-section">
+
+      <!-- 2 NÚT TAB -->
+      <div class="tab-buttons">
+        <button class="tab-button active">PHOTOS COSPLAY</button>
+        <button class="tab-button" onclick="switchPage()">NON-COSPLAY PHOTOS</button>
+      </div>
+
+      <!-- GALLERY COSPLAY -->
+      <div class="gallery">
+        <div class="row-vertical">
+          <img src="https://i.ibb.co/PvLLnTkF/MEITU-20251021-204550486.jpg">
+          <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
+          <img src="https://i.ibb.co/35WfCyHT/25HH1086.jpg">
+        </div>
+
+        <div class="row-horizontal">
+          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
+          <img src="https://i.ibb.co/rGDcX5Zw/25-HH1130-2.jpg">
+        </div>
+      </div>
+
+    </section>
   </div>
 
-  <!-- ✅ CHUYỂN TRANG MƯỢT + PRELOAD -->
+  <!-- CHUYỂN TRANG MƯỢT + PRELOAD -->
   <script>
     function switchPage() {
       document.body.style.opacity = "0";
