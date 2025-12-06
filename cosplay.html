@@ -22,14 +22,13 @@
 
     body.loaded { opacity: 1; }
 
-    /* ✅ FIX ẢNH KHÔNG BỊ CẮT / KHÔNG VIỀN ĐEN */
+    /* ✅ CÁCH 1 — ẢNH FILL FULL, KHÔNG KHOẢNG TRẮNG */
     img {
       pointer-events: none;
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       object-position: center;
-      background-color: #fff;
       display: block;
     }
 
@@ -158,7 +157,7 @@
 
     .tab-button.active { box-shadow: 0 0 20px rgba(56,189,248,1); }
 
-    /* GALLERY */
+    /* ✅ GALLERY — ép chiều cao để ảnh fill full */
     .gallery {
       display: none;
       opacity: 0;
@@ -173,16 +172,26 @@
     .row-vertical {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      height: 420px; /* mày chỉnh cao thấp tùy ý */
+      gap: 10px;
     }
 
     .row-horizontal {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      height: 320px; /* mày chỉnh tùy ý */
+      gap: 10px;
     }
 
     @media (max-width: 900px) {
-      .row-vertical { grid-template-columns: repeat(2, 1fr); }
-      .row-horizontal { grid-template-columns: 1fr; }
+      .row-vertical {
+        grid-template-columns: repeat(2, 1fr);
+        height: 300px;
+      }
+      .row-horizontal {
+        grid-template-columns: 1fr;
+        height: 260px;
+      }
     }
   </style>
 </head>
