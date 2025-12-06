@@ -25,12 +25,14 @@
     }
 
     img {
-      pointer-events: none;
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background-color: #fff; /* hoặc #e0f2fe để trùng nền */
+}
+
 
     a { text-decoration: none; color: inherit; }
 
@@ -199,8 +201,7 @@
       gap: 0;
     }
 
-    .row-vertical img { aspect-ratio: 2/3; }
-    .row-horizontal img { aspect-ratio: 3/2; }
+  
 
     @media (max-width: 900px) {
       .row-vertical { grid-template-columns: repeat(2, 1fr); }
