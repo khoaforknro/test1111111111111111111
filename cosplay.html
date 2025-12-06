@@ -22,13 +22,13 @@
 
     body.loaded { opacity: 1; }
 
-    /* ✅ BẢN GỐC — KHÔNG CROP, KHÔNG KHOẢNG TRẮNG LỖI */
     img {
       pointer-events: none;
       width: 100%;
       height: auto;
       object-fit: contain;
       object-position: center;
+      background-color: #fff;
       display: block;
     }
 
@@ -73,7 +73,7 @@
 
     .brand-subtitle {
       font-size: 13px;
-      letter-letter-spacing: 2px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: #6b7280;
     }
@@ -157,7 +157,7 @@
 
     .tab-button.active { box-shadow: 0 0 20px rgba(56,189,248,1); }
 
-    /* ✅ GALLERY — BẢN GỐC */
+    /* GALLERY */
     .gallery {
       display: none;
       opacity: 0;
@@ -172,13 +172,11 @@
     .row-vertical {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
     }
 
     .row-horizontal {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
     }
 
     @media (max-width: 900px) {
@@ -255,14 +253,14 @@
     <!-- GALLERY NON-COSPLAY -->
     <div id="gallery-non" class="gallery">
       <div class="row-vertical">
-        <img src="LINK7">
-        <img src="LINK8">
-        <img src="LINK9">
+        <img src="https://i.ibb.co/7NW490rK/snaptik-vn-Lx2-YH-1.jpg">
+        <img src="https://i.ibb.co/Zpm8wMHL/25HH1116.jpg">
+        <img src="https://i.ibb.co/Zpm8wMHL/25HH1116.jpg">
       </div>
 
       <div class="row-horizontal">
-        <img src="LINK10">
-        <img src="LINK11">
+        <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
+        <img src="https://i.ibb.co/9mQptgSN/ORION-1.jpg">
       </div>
     </div>
 
