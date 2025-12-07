@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Videos - Ke Sugar</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f2fe;
+      color: #1f2933;
+      opacity: 0;
+      transition: opacity .5s ease;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    body.loaded { opacity: 1; }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 30px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .avatar-wrapper {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 3px solid #fff;
+      background-color: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(56,189,248,0.25);
+    }
+
+    .brand-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
+      max-width: 500px;
+    }
+
+    .nav-item {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4b5563;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg,#3b82f6,#0ea5e9);
+      transition: width .3s ease;
+    }
+
+    .nav-item:hover::after { width: 100%; }
+
+    /* PHẦN TRÊN */
+    .video-intro {
+      background-color: #fff;
+      border-radius: 24px;
+      padding: 30px 28px;
+      box-shadow: 0 24px 60px rgba(56,189,248,0.18);
+      border: 1px solid rgba(56,189,248,0.2);
+      margin-bottom: 40px;
+    }
+
+    .video-intro h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .video-intro p {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .video-upload-box video {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* PHẦN DƯỚI */
+    .video-section {
+      background-color: #0f172a;
+      padding: 40px 28px;
+      border-radius: 24px;
+      color: #fff;
+    }
+
+    /* ✅ Glow đẹp cho chữ HIGHLIGHTS */
+    .video-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 35px;
+      text-align: center;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      /* Hiệu ứng glow ARGB */
+      color: #00eaff;
+      text-shadow:
+        0 0 10px rgba(0,255,255,0.7),
+        0 0 20px rgba(0,200,255,0.6),
+        0 0 35px rgba(0,150,255,0.5),
+        0 0 50px rgba(0,255,255,0.4);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 315px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (e.key === 'F12') e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
+    if (e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
+  });
+
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand-area">
+      <div class="avatar-wrapper">
+        <img src="https://iili.io/fIneulp.md.png" />
+      </div>
+      <div>
+        <div class="brand-title">Ke Sugar</div>
+        <div class="brand-subtitle">Photography & Videography Portfolio</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-item" href="index.html">MAIN</a>
+      <a class="nav-item" href="about.html">ABOUT ME</a>
+      <a class="nav-item" href="photos.html">PHOTOS</a>
+      <a class="nav-item" href="cosplay.html">PHOTOS COSPLAY</a>
+      <a class="nav-item" href="normal.html">NON-COSPLAY</a>
+      <a class="nav-item" href="videos.html">VIDEOS</a>
+      <a class="nav-item" href="service.html">SERVICE & CONTACT</a>
+      <a class="nav-item" href="rules.html">RULES</a>
+    </nav>
+  </header>
+
+  <!-- PHẦN TRÊN: VIDEO UPLOAD -->
+  <section class="video-intro">
+    <h1>VIDEOS</h1>
+    <p>Video được upload từ nguồn khác (Drive / Dropbox / Host riêng).</p>
+
+    <div class="video-upload-box">
+      <video controls>
+        <source src="https://github.com/khoaforknro/videohehehe/raw/refs/heads/main/ab07cb999682e1ee83c006dbc56b24fc.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- PHẦN DƯỚI: EMBED YOUTUBE -->
+  <section class="video-section">
+    <h2>HIGHLIGHTS</h2>
+
+    <div class="video-grid">
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
