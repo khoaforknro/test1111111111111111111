@@ -126,7 +126,13 @@
       margin-bottom: 20px;
     }
 
-    /* Video host ngoài */
+    /* ✅ GRID 2 VIDEO NGANG */
+    .video-upload-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
     .video-upload-box {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 */
@@ -152,7 +158,6 @@
       color: #fff;
     }
 
-    /* Glow đẹp cho HIGHLIGHTS */
     .video-section h2 {
       font-size: 28px;
       font-weight: 800;
@@ -183,6 +188,7 @@
     }
 
     @media (max-width: 900px) {
+      .video-upload-row,
       .video-grid {
         grid-template-columns: 1fr;
       }
@@ -237,25 +243,29 @@
     </nav>
   </header>
 
-  <!-- PHẦN TRÊN: VIDEO HOST NGOÀI -->
+  <!-- ✅ PHẦN TRÊN: 2 VIDEO HOST NGOÀI -->
   <section class="video-intro">
     <h1>VIDEOS</h1>
     <p>Video được upload từ nguồn khác (Drive / Dropbox / GitHub / Host riêng).</p>
 
-    <div class="video-upload-box">
-      <video controls>
-        <source src="https://raw.githubusercontent.com/khoaforknro/videohehehe/refs/heads/main/eb8de92c064ee31ad28ac80f4ca0c75f.mp4" type="video/mp4">
-      </video>
-    </div>
-    
-    <div class="video-upload-box">
-      <video controls>
-        <source src="https://raw.githubusercontent.com/khoaforknro/videohehehe/refs/heads/main/ab07cb999682e1ee83c006dbc56b24fc.mp4" type="video/mp4">
-      </video>
+    <div class="video-upload-row">
+
+      <div class="video-upload-box">
+        <video controls>
+          <source src="https://raw.githubusercontent.com/khoaforknro/videohehehe/main/eb8de92c064ee31ad28ac80f4ca0c75f.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-upload-box">
+        <video controls>
+          <source src="https://raw.githubusercontent.com/khoaforknro/videohehehe/main/ab07cb999682e1ee83c006dbc56b24fc.mp4" type="video/mp4">
+        </video>
+      </div>
+
     </div>
   </section>
 
-  <!-- PHẦN DƯỚI: EMBED YOUTUBE -->
+  <!-- ✅ PHẦN DƯỚI: EMBED YOUTUBE -->
   <section class="video-section">
     <h2>HIGHLIGHTS</h2>
 
